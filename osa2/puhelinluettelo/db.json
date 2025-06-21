@@ -1,0 +1,24 @@
+{
+  "persons": [
+    {
+      "id": "d445",
+      "name": "Niko Hänninen",
+      "number": "0443407850"
+    },
+    {
+      "id": "f417",
+      "name": "Kim Hänninen",
+      "number": "42425635636"
+    },
+    {
+      "id": "f568",
+      "name": "Jessika Äijälä",
+      "number": "0424263636"
+    },
+    {
+      "id": "a81f",
+      "name": "Aatu Turula",
+      "number": "45242424563"
+    }
+  ]
+}
