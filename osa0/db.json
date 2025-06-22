@@ -18,12 +18,12 @@
     {
       "id": "c9d7",
       "content": "new note",
-      "important": false
+      "important": true
     },
     {
       "id": "c0a6",
       "content": "new note",
-      "important": false
+      "important": true
     },
     {
       "id": "9fa4",
@@ -48,17 +48,17 @@
     {
       "id": "12be",
       "content": "fullstackopen",
-      "important": false
+      "important": true
     },
     {
       "id": "e6c6",
       "content": "hello",
-      "important": false
+      "important": true
     },
     {
       "id": "4bfb",
       "content": "dfdfdf",
-      "important": false
+      "important": true
     },
     {
       "id": "e663",
