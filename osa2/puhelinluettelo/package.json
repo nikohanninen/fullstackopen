@@ -1,10 +1,10 @@
 {
-  "name": "puhelinluettelo",
+  "name": "puhelinluettelobackend",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
+    "start": "node index.js",
+    "dev": "node --watch index.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "axios": "^1.10.0",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -26,5 +28,9 @@
     "globals": "^16.0.0",
     "json-server": "^1.0.0-beta.3",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "\"\"",
+  "main": "index.js",
+  "author": "Niko Hänninen",
+  "license": "ISC"
 }
