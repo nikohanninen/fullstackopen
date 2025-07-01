@@ -12,7 +12,6 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
-    console.log('effect')
     noteService
       .getAll()
       .then(initialNotes => {
