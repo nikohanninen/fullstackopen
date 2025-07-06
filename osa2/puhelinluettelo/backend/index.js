@@ -1,8 +1,11 @@
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(cors())
+app.use(express.static('dist'))
 
 
 
@@ -34,11 +37,6 @@ let persons = [
         number: "12-43-234345"
     }
 ]
-
-app.get('/', (request, response) => {
-    response.send("<h1>Hellfddo World</h1>")
-    console.log("hello")
-})
 
 app.get('/info', (request, response) => {
     response.send(
