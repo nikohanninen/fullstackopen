@@ -80,7 +80,7 @@ app.put('/api/notes/:id', (request, response, next) => {
       note.content = content
       note.important = important
 
-      Note.save().then((updatedNote) => {
+      note.save().then((updatedNote) => {
         response.json(updatedNote)
       })
     })
