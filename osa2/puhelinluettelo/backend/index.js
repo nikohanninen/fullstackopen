@@ -18,24 +18,6 @@ app.use(morgan(function (tokens, req, res) {
   ].join(' ')
 }))
 
-let persons = [
-    {
-        id: "1",
-        name: "Arto Hellas",
-        number: "040-123456"
-    },
-    {
-        id: "2",
-        name: "Ada Lovelace",
-        number: "39-44-5323523"
-    },
-    {
-        id: "3",
-        name: "Dan Abramov",
-        number: "12-43-234345"
-    }
-]
-
 const errorHandler = (error, request, response, next) => {
     console.error(error.message)
     if(error.name === 'CastError'){
@@ -50,11 +32,14 @@ const unknownEndpoint = (request, response) => {
 }
 
 app.get('/info', (request, response) => {
-    response.send(
+    Person.find({}).then(persons => {
+        response.send(
         `<p>Phonebook has info for ${persons.length} people<p>
         <p>${Date().toString()}<p>
         `
     )
+    })
+    
 })
 
 app.get('/api/persons', (request, response) => {
@@ -96,6 +81,20 @@ app.delete('/api/persons/:id', (request, response, next) => {
     })
     .catch((error) => next(error))
 })
+
+app.put('/api/persons/:id', (request, response, next) => {
+    Person.findById(request.params.id)
+    .then(person => {
+        if(person){
+            person.number = request.body.number
+            person.save().then(result => {
+                response.json(result)
+            })
+        }else {
+            response.status(404).end()
+        }})
+    .catch((error) => next(error))
+    })
 
 const generateId = () => {
     return Math.round(Math.random() * 1000000)
