@@ -29,7 +29,6 @@ const App = () => {
       name: String(newName),
       number:String(newNumber)
     }
-    
     if(persons.findIndex((element) => element.name === newName) === -1){
       personService.create(nameObject).then(returnedObject => {
         setPersons(persons.concat(returnedObject))
@@ -39,6 +38,16 @@ const App = () => {
         setTimeout(() => {
           setNotification(null)
         }, 2000)
+          })
+          .catch(error => {
+            setNotificationType('error')
+            setNotification(error.response.data.error)
+            setTimeout(() => {
+              setNotification(null)
+            }, 3000)
+            setTimeout(() => {
+              setNotificationType('normal')
+            }, 3000)
           })
     }
     else{

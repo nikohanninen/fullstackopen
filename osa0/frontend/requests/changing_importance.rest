@@ -1,0 +1,7 @@
+PUT https://notes-fsfb.onrender.com/api/notes/6870bfc8b6412b93e7855689
+Content-Type: application/json
+
+{
+    "content": "ASDASD",
+    "important": true
+}
