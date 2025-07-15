@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
 if (process.argv.length < 3){
-    console.log("You need to give password as an argument")
+    console.log('You need to give password as an argument')
     process.exit(1)
 }
 
 else if (process.argv.length > 5){
-    console.log("Enter the right amount of arguments")
+    console.log('Enter the right amount of arguments')
     process.exit(1)
 }
 
@@ -25,21 +25,20 @@ if (process.argv.length === 3) {
     console.log('phonebook:')
     Person.find({}).then(result => {
         result.forEach(person => {
-        console.log(`${person.name} ${person.number}`)
-    })
+            console.log(`${person.name} ${person.number}`)
+        })
         mongoose.connection.close()
     })
 }
 
 else if (process.argv.length === 5){
     const person = new Person({
-    name: process.argv[3],
-    number: process.argv[4]
+        name: process.argv[3],
+        number: process.argv[4]
     })
-    
     person.save().then(result => {
-    console.log(`added ${result.name} number ${result.number} to phonebook`)
-    mongoose.connection.close()
+        console.log(`added ${result.name} number ${result.number} to phonebook`)
+        mongoose.connection.close()
     })
 }
 

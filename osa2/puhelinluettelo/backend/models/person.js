@@ -4,12 +4,12 @@ const url = process.env.MONGODB_URI
 
 console.log('connecting to', url)
 mongoose.connect(url)
-.then(result => {
-    console.log('connected to MongoDB')
-})
-.catch((error) => {
-    console.log('error connecting to MongoDB', error.message)
-})
+    .then(result => {
+        console.log('connected to MongoDB')
+    })
+    .catch((error) => {
+        console.log('error connecting to MongoDB', error.message)
+    })
 
 const numberValidator = (val) => {
     const reqex = /^\d{2,3}-\d{5,}$/
@@ -29,7 +29,6 @@ const personSchema = new mongoose.Schema({
             validator: numberValidator,
             message: 'not a valid phone number, give number in this format: xxx-xxxxxx'
         },
-        
     },
 })
 
