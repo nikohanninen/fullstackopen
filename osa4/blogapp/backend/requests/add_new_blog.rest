@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "testing adding 3",
+    "author": "Niko Hänninen",
+    "url": "link to blog",
+    "likes": 0
+}
+
